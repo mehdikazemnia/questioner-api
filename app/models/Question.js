@@ -3,10 +3,11 @@ const Schema = mongoose.Schema;
 const QuestionSchema = new Schema({
     id: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     kind: {
-        type: Number,// 0 is explain, 1 is choose
+        type: Number, // 0 is explain, 1 is choose
         required: true
     },
     message: {
@@ -16,7 +17,7 @@ const QuestionSchema = new Schema({
     options: {
         type: Array
     },
-    prev:{
+    prev: {
         type: String
     }
 });
