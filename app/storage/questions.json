@@ -1,0 +1,34 @@
+[
+    {
+        "id": "name",
+        "kind": 0,
+        "message": "Hi, What`s your name?"
+    },
+    {
+        "id": "color",
+        "kind": 1,
+        "message": "Which color do you like more?",
+        "options": [{
+                "kind": 0,
+                "src": "red",
+                "next": "job"
+            },
+            {
+                "kind": 0,
+                "src": "green",
+                "next": "job"
+            },
+            {
+                "kind": 0,
+                "src": "blue",
+                "next": "job"
+            },
+            {
+                "kind": 0,
+                "src": "yellow",
+                "next": "job"
+            }
+        ]
+    }
+
+]
