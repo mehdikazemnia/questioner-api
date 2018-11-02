@@ -6,7 +6,8 @@ const QuestionSchema = new Schema({
         required: true
     },
     kind: {
-        type: Number // 0 is explain, 1 is choose
+        type: Number,// 0 is explain, 1 is choose
+        required: true
     },
     message: {
         type: String,
