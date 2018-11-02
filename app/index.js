@@ -20,7 +20,7 @@ server.post('/', guest, function (req, res) {
 });
 
 // see your answers
-server.get('/sheet', auth, function (req, res) {
+server.post('/sheet', auth, function (req, res) {
     QM.sheet(req, res);
 });
 
