@@ -6,7 +6,7 @@ const UserSchema = new Schema({
         required: true
     },
     sheet: {
-        type: Array
+        type: Object
     }
 });
 const User = mongoose.model('user', UserSchema);
