@@ -55,7 +55,9 @@ function init() {
 
 // mongoose
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/questioner');
+mongoose.connect('mongodb://localhost/questioner', {
+    useNewUrlParser: true
+});
 mongoose.connection
     .once('open', init)
     .on('error', console.error);
