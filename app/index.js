@@ -13,11 +13,9 @@ server.use(bodyParser.json());
 
 // for guests, the first point
 server.get('/', guest, function (req, res) {
-    QM.render(req, res);
+    QM.join(req, res);
 });
-server.post('/', guest, function (req, res) {
-    QM.respond(req, res);
-});
+
 
 // see your answers
 server.post('/sheet', auth, function (req, res) {
@@ -30,7 +28,7 @@ server.post('/reset', auth, function (req, res) {
 });
 
 // get the question
-server.get('/:qid', auth, function (req, res) {
+server.get('/:qid',function (req, res) {
     QM.render(req, res);
 });
 
