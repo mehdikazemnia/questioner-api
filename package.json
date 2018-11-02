@@ -1,0 +1,28 @@
+{
+  "name": "questioner-api",
+  "version": "0.0.0",
+  "description": "simple dynamic Q/A api",
+  "main": "./app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehdikazemnia/questioner-api.git"
+  },
+  "keywords": [
+    "question",
+    "answer"
+  ],
+  "author": "Mehdi Kazemnia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mehdikazemnia/questioner-api/issues"
+  },
+  "homepage": "https://github.com/mehdikazemnia/questioner-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.8"
+  }
+}
