@@ -87,7 +87,7 @@ class QuestionManager {
             user.sheet[question.id] = answer;
         } else { // choose (options)
             answer = req.body.answer / 1
-            if (answer >= 0 && answer < req.locals.question.options.length) {
+            if (answer >= 0 && answer < res.locals.question.options.length) {
                 user.sheet[question.id] = req.body.answer;
             }
         }
