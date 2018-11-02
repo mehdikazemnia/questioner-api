@@ -12,6 +12,8 @@ module.exports = function (req, res, next) {
                     if (question) {
                         if (question.prev) {
                             if (user.sheet.hasOwnProperty(question.prev)) {
+                                res.locals.user = user;
+                                res.locals.question = question;
                                 next();
                             } else {
                                 res.json({
