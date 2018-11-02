@@ -15,7 +15,7 @@ class QuestionManager {
      */
     generateToken(clb) {
         let rand = Date.now() + Math.round((Math.random() * 1000)) + 1000;
-        token = 't' + rand.toString(32);
+        let token = 't' + rand.toString(32);
         User.findOne({
             token: token
         }).then((user) => {
@@ -35,7 +35,7 @@ class QuestionManager {
      */
     join(req, res) {
         this.generateToken((token) => {
-            user = new User({
+            let user = new User({
                 token: token,
                 sheet: {}
             });
@@ -55,7 +55,22 @@ class QuestionManager {
      * @param {Object} res - express
      */
     render(req, res) {
-
+        Question.findOne({
+            id: req.params.qid
+        }).then((question) => {
+            if (question) {
+                let response = {
+                    msg: question.message,
+                    type: question.kind,
+                };
+                if (question.kind == 1) response.options = question.options;
+                res.json(response);
+            } else {
+                res.json({
+                    err: 'question not found'
+                });
+            }
+        });
     }
 
     /**
@@ -64,6 +79,32 @@ class QuestionManager {
      * @param {Object} res - express
      */
     respond(req, res) {
+        let question = res.locals.question;
+        let user = res.locals.user;
+        let answer;
+        if (question.kind == 0) { // explain (no options)
+            answer = req.body.answer;
+            user.sheet[question.id] = answer;
+        } else { // choose (options)
+            answer = req.body.answer / 1
+            if (answer >= 0 && answer < req.locals.question.options.length) {
+                user.sheet[question.id] = req.body.answer;
+            }
+        }
+        user.markModified('sheet');
+        user.save().then(() => {
+            if (question.kind == 0) {
+                res.json({
+                    msg: "answer recieved",
+                    next: "/" + question.next
+                });
+            } else {
+                res.json({
+                    msg: "answer recieved",
+                    next: "/" + question.options[answer].next
+                });
+            }
+        });
 
     }
 
