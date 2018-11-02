@@ -6,7 +6,7 @@ const guest = require('./middlewares/guest.js');
 const QuestionManager = require('./QuestionManager.js');
 
 const server = express();
-const qm = new QuestionManager('...');
+const QM = new QuestionManager('name');
 
 server.use(bodyParser.json());
 
