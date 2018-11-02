@@ -6,14 +6,14 @@ module.exports = function (req, res, next) {
             token: req.body.token
         }).then((user) => {
             if (user) {
+                res.locals.user = user;
                 Question.findOne({
-                    id: question.params.qid
+                    id: req.params.qid
                 }).then((question) => {
                     if (question) {
+                        res.locals.question = question;
                         if (question.prev) {
                             if (user.sheet.hasOwnProperty(question.prev)) {
-                                res.locals.user = user;
-                                res.locals.question = question;
                                 next();
                             } else {
                                 res.json({
