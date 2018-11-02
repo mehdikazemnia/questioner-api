@@ -12,7 +12,7 @@ server.use(bodyParser.json());
 
 
 // for guests, the first point
-server.get('/', guest, function (req, res) {
+server.post('/', guest, function (req, res) {
     QM.join(req, res);
 });
 
