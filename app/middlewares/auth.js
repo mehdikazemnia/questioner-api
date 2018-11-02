@@ -41,7 +41,7 @@ module.exports = function (req, res, next) {
         });
     } else {
         res.json({
-            err: 'you should first visit "/" to login, othewise the case is that you didn`t pass the token',
+            err: 'you should first visit "/" to get a token, otherwise the case is that you didn`t pass the token',
             next: '/'
         });
     }
