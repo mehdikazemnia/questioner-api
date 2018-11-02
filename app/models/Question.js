@@ -19,6 +19,9 @@ const QuestionSchema = new Schema({
     },
     prev: {
         type: String
+    },
+    next: {
+        type: String
     }
 });
 const Question = mongoose.model('question', QuestionSchema);

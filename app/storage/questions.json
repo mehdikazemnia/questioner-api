@@ -1,8 +1,8 @@
-[
-    {
+[{
         "id": "name",
         "kind": 0,
-        "message": "Hi, What`s your name?"
+        "message": "Hi, What`s your name?",
+        "next": "color"
     },
     {
         "id": "color",
