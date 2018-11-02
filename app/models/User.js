@@ -6,8 +6,11 @@ const UserSchema = new Schema({
         required: true
     },
     sheet: {
-        type: Object
+        type: Object,
+        default: {}
     }
+}, {
+    minimize: false
 });
 const User = mongoose.model('user', UserSchema);
 module.exports = User;
