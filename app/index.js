@@ -11,6 +11,40 @@ const qm = new QuestionManager('...');
 server.use(bodyParser.json());
 
 
+// for guests, the first point
+server.get('/', guest, function (req, res) {
+    QM.render(req, res);
+});
+server.post('/', guest, function (req, res) {
+    QM.decide(req, res);
+});
+
+// see your answers
+server.get('/sheet', auth, function (req, res) {
+    QM.sheet(req, res);
+});
+
+// reset the Q/A, then you can start with a new token
+server.post('/reset', auth, function (req, res) {
+    QM.reset(req, res);
+});
+
+// get the question
+server.get('/:qid', auth, function (req, res) {
+    QM.render(req, res);
+});
+
+// answer the question
+server.post('/:qid', auth, function (req, res) {
+    QM.decide(req, res);
+});
+
+
+
+
+
+
+
 // express run (after mongoose connected)
 function init() {
     console.log('mongoose is connected');
