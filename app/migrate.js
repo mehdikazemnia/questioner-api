@@ -14,8 +14,6 @@ mongoose.connection
 function init() {
     function inject(n) {
         let question = new Question(questions[n]);
-        console.log(questions[n]);
-        console.log(n);
         question.save().then(() => {
             n++;
             if (n == questions.length) {
