@@ -16,7 +16,7 @@ server.get('/', guest, function (req, res) {
     QM.render(req, res);
 });
 server.post('/', guest, function (req, res) {
-    QM.decide(req, res);
+    QM.respond(req, res);
 });
 
 // see your answers
@@ -36,7 +36,7 @@ server.get('/:qid', auth, function (req, res) {
 
 // answer the question
 server.post('/:qid', auth, function (req, res) {
-    QM.decide(req, res);
+    QM.respond(req, res);
 });
 
 
