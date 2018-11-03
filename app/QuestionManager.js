@@ -53,6 +53,22 @@ class QuestionManager {
     }
 
     /**
+     * remove the user from database
+     * @param {Object} req - express
+     * @param {Object} res - express
+     */
+    reset(req, res) {
+        User.findOne({
+            token: res.locals.user.token
+        }).remove().exec().then(() => {
+            res.json({
+                msg: 'we removed your token from our system, you can do a fresh start at "/"',
+                next: "/"
+            })
+        });
+    }
+
+    /**
      * generates a random token
      * again and again if already exists
      */
