@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "68dfb32b-255b-45ee-bda4-003a9d3d94fa",
+		"name": "questioner-sample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/reset",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "connect.sid=s%3AqsgvEN1-r6ipUNlF37MwP7dEoBHLkgfW.FyL5KB2GeNhrXFawrHu%2FHBL7CKJe6KbEQHVVnElD5Xs; Path=/; HttpOnly",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"t1crbj4pvr\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/reset",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/sheet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "connect.sid=s%3AqsgvEN1-r6ipUNlF37MwP7dEoBHLkgfW.FyL5KB2GeNhrXFawrHu%2FHBL7CKJe6KbEQHVVnElD5Xs; Path=/; HttpOnly",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"t1crbj4pvr\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/sheet",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sheet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/color",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "connect.sid=s%3AqsgvEN1-r6ipUNlF37MwP7dEoBHLkgfW.FyL5KB2GeNhrXFawrHu%2FHBL7CKJe6KbEQHVVnElD5Xs; Path=/; HttpOnly",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"t1crbj4pvr\",\n\t\"answer\": \"2\"    \n}"
+				},
+				"url": {
+					"raw": "localhost:3000/color",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"color"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/color",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "connect.sid=s%3AqsgvEN1-r6ipUNlF37MwP7dEoBHLkgfW.FyL5KB2GeNhrXFawrHu%2FHBL7CKJe6KbEQHVVnElD5Xs; Path=/; HttpOnly",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"t1crbj4pvr\",\n\t\"answer\": \"mehdi\"    \n}"
+				},
+				"url": {
+					"raw": "localhost:3000/color",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"color"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/name",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "connect.sid=s%3AqsgvEN1-r6ipUNlF37MwP7dEoBHLkgfW.FyL5KB2GeNhrXFawrHu%2FHBL7CKJe6KbEQHVVnElD5Xs; Path=/; HttpOnly",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"t1crbj4pvr\",\n\t\"answer\": \"mehdi\"    \n}"
+				},
+				"url": {
+					"raw": "localhost:3000/name",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"name"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "connect.sid=s%3AqsgvEN1-r6ipUNlF37MwP7dEoBHLkgfW.FyL5KB2GeNhrXFawrHu%2FHBL7CKJe6KbEQHVVnElD5Xs; Path=/; HttpOnly",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/name",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"name"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "connect.sid=s%3AqsgvEN1-r6ipUNlF37MwP7dEoBHLkgfW.FyL5KB2GeNhrXFawrHu%2FHBL7CKJe6KbEQHVVnElD5Xs; Path=/; HttpOnly",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
