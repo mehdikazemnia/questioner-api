@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const config = require('./config/db.json');
 const auth = require('./middlewares/auth.js');
 const basicAuth = require('./middlewares/basic-auth.js');
 const guest = require('./middlewares/guest.js');
@@ -29,7 +30,7 @@ server.post('/reset', basicAuth, function (req, res) {
 });
 
 // get the question
-server.get('/:qid',function (req, res) {
+server.get('/:qid', function (req, res) {
     QM.render(req, res);
 });
 
@@ -54,7 +55,7 @@ function init() {
 
 // mongoose
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/questioner', {
+mongoose.connect(config.url, {
     useNewUrlParser: true
 });
 mongoose.connection
