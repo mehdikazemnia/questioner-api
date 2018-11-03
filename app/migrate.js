@@ -10,7 +10,7 @@ mongoose.connect(config.url, {
 });
 mongoose.connection
     .once('open', function () {
-        Question.find({}).remove().exec().then(() => {
+        Question.deleteMany({}).exec().then(() => {
             init();
         });
     })
