@@ -4,7 +4,7 @@
   "description": "simple dynamic Q/A api",
   "main": "./app/index.js",
   "scripts": {
-    "setup":"node ./app/migrate.js",
+    "migrate":"node ./app/migrate.js",
     "start":"node ./app/index.js"
   },
   "repository": {
