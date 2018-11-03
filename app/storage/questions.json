@@ -11,22 +11,22 @@
         "options": [{
                 "kind": 0,
                 "src": "red",
-                "next": "job"
+                "next": "sheet"
             },
             {
                 "kind": 0,
                 "src": "green",
-                "next": "job"
+                "next": "sheet"
             },
             {
                 "kind": 0,
                 "src": "blue",
-                "next": "job"
+                "next": "sheet"
             },
             {
                 "kind": 0,
                 "src": "yellow",
-                "next": "job"
+                "next": "sheet"
             }
         ]
     }
