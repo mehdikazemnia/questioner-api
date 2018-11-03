@@ -14,7 +14,7 @@ ___
 ### basic dev/prod
 1. `npm install` 
   will install mentioned node packages
-2. `npm setup` 
+2. `npm run migrate` 
   will migrate questions from `./app/storage/qustions.json` to questions collection
 3. `npm start`
   will start the server on `localhost:3000`
