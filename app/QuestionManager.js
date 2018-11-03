@@ -10,6 +10,49 @@ class QuestionManager {
     }
 
     /**
+     * send the answer sheet to the user
+     * @param {Object} req - express
+     * @param {Object} res - express
+     */
+    sheet(req, res) {
+        let questions = Object.keys(res.locals.user.sheet);
+        if (questions.length > 0) { // answer sheet is not empty
+            let sheet = [];
+
+            function step(n) {
+                Question.findOne({
+                    id: questions[n]
+                }).then((question) => {
+                    if (question.kind == 0) {
+                        sheet.push([
+                            question.message,
+                            res.locals.user.sheet[questions[n]]
+                        ]);
+                    } else {
+                        sheet.push([
+                            question.message,
+                            question.options[res.locals.user.sheet[questions[n]] / 1].src
+                        ]);
+                    }
+                    n++;
+                    if (n === questions.length) {
+                        res.json({
+                            sheet: sheet
+                        });
+                    } else {
+                        step(n);
+                    }
+                })
+            }
+            step(0);
+        } else {
+            res.join({
+                err: 'you`ve not answered any questions'
+            })
+        }
+    }
+
+    /**
      * generates a random token
      * again and again if already exists
      */
