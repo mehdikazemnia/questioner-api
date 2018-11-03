@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const auth = require('./middlewares/auth.js');
+const basicAuth = require('./middlewares/basic-auth.js');
 const guest = require('./middlewares/guest.js');
 const QuestionManager = require('./QuestionManager.js');
 
@@ -18,12 +19,12 @@ server.post('/', guest, function (req, res) {
 
 
 // see your answers
-server.post('/sheet', auth, function (req, res) {
+server.post('/sheet', basicAuth, function (req, res) {
     QM.sheet(req, res);
 });
 
 // reset the Q/A, then you can start with a new token
-server.post('/reset', auth, function (req, res) {
+server.post('/reset', basicAuth, function (req, res) {
     QM.reset(req, res);
 });
 
