@@ -4,7 +4,8 @@
   "description": "simple dynamic Q/A api",
   "main": "./app/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "setup":"node ./app/migrate.js",
+    "start":"node ./app/index.js"
   },
   "repository": {
     "type": "git",
